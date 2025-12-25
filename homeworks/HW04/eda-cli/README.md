@@ -225,7 +225,7 @@ file: <CSV-файл>
 
 Через Swagger:
 
-- в `/docs` открыть `POST /quality-from-csv`,
+- в `/docs` открыть `quality-from-csv`,
 - нажать `Try it out`,
 - выбрать файл (например, `data/example.csv`),
 - нажать `Execute`.
@@ -244,6 +244,50 @@ curl -X POST "http://127.0.0.1:8000/quality-from-csv" \
 - `flags` - булевы флаги из `compute_quality_flags`;
 - `dataset_shape` - реальные размеры датасета (`n_rows`, `n_cols`);
 - `latency_ms` - время обработки запроса.
+
+---
+
+### 5. `POST /quality_flags_from_csv` – оценка качества по CSV-файлу
+
+Эндпоинт принимает CSV-файл, внутри:
+
+- читает его в `pandas.DataFrame`;
+- вызывает функции из `eda_cli.core`:
+
+  - `summarize_dataset`,
+  - `missing_table`,
+  - `compute_quality_flags`;
+- возвращает оценку флагов, в том числе добавленных.
+
+**Запрос:**
+
+```http
+POST /quality_flags_from_csv
+Content-Type: multipart/form-data
+file: <CSV-файл>
+```
+
+Через Swagger:
+
+- в `/docs` открыть `quality_flags_from_csv`,
+- нажать `Try it out`,
+- выбрать файл (например, `data/example.csv`),
+- нажать `Execute`.
+
+**Пример вызова через `curl` (Linux/macOS/WSL):**
+
+```bash
+curl -X POST "http://127.0.0.1:8000/quality_flags_from_csv" \
+  -F "file=@data/example.csv"
+```
+
+Ответ будет содержать:
+
+- `too_few_rows` - мало ли строк или нет.
+- `too_many_columns` - многоли колонок или нет.
+- `too_many_missing` - многоли пропущенных значений или нет.
+- `has_constant_columns` - есть ли константные колонки или нет.
+- `has_many_zero_values` - многоли нулевых значений или нет.
 
 ---
 
