@@ -1,10 +1,22 @@
 {
+    "Dummy": {
+        "best_params": {},
+        "cv_score": null
+    },
+    "LogisticRegression": {
+        "best_params": {
+            "C": 0.01,
+            "max_iter": 200,
+            "solver": "liblinear"
+        },
+        "cv_score": 0.8298888888888889
+    },
     "DecisionTree": {
         "best_params": {
             "max_depth": 12,
             "min_samples_leaf": 10
         },
-        "cv_score": 0.8745555555555555
+        "cv_score": 0.8757777777777778
     },
     "RandomForest": {
         "best_params": {
@@ -13,7 +25,7 @@
             "min_samples_leaf": 5,
             "n_estimators": 100
         },
-        "cv_score": 0.9244444444444445
+        "cv_score": 0.9247777777777777
     },
     "GradientBoosting": {
         "best_params": {
@@ -21,6 +33,6 @@
             "max_depth": 4,
             "n_estimators": 200
         },
-        "cv_score": 0.9296666666666666
+        "cv_score": 0.9322222222222223
     }
 }
