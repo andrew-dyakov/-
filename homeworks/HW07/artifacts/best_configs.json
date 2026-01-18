@@ -1,0 +1,24 @@
+{
+  "ds1": {
+    "algorithm": "KMeans",
+    "parameters": {
+      "n_clusters": 2
+    },
+    "reason": "Best silhouette score (0.5216)"
+  },
+  "ds2": {
+    "algorithm": "DBSCAN",
+    "parameters": {
+      "eps": 0.8,
+      "min_samples": 5
+    },
+    "reason": "Better noise handling (0.5% noise)"
+  },
+  "ds3": {
+    "algorithm": "KMeans",
+    "parameters": {
+      "n_clusters": 3
+    },
+    "reason": "Stable with high noise (0.1%)"
+  }
+}
