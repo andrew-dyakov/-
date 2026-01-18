@@ -74,14 +74,14 @@
 
 Для каждого датасета – краткая сводка результатов.
 
-### 4.1 Dataset A (12000, 8 признаков)
+### 4.1 Dataset A 
 
 - Лучший метод: **KMeans с k=2**
 - Метрики: Silhouette=0.5216, Davies-Bouldin=0.6853, Calinski-Harabasz=11787
 - DBSCAN результат: 2 кластера, 0% шума (eps=1.80, min_samples=3)
 - Обоснование: KMeans и DBSCAN показали одинаковое качество (Sil≈0.52), но KMeans проще и работает стабильнее; кластеры хорошо разделены
 
-### 4.2 Dataset B (8000, 3 признака)
+### 4.2 Dataset B 
 
 - Лучший метод: **DBSCAN с eps=0.80, min_samples=5**
 - Метрики: Silhouette=0.4810, Davies-Bouldin=7.6544, Calinski-Harabasz=7.6
@@ -89,7 +89,7 @@
 - KMeans метрики: Silhouette=0.3069 (хуже на 57%)
 - Обоснование: нелинейная структура; DBSCAN выигрывает; естественно обнаруживает и обрабатывает шум
 
-### 4.3 Dataset C (15000, 4 признака)
+### 4.3 Dataset C 
 
 - Лучший метод: **KMeans с k=3**
 - Метрики: Silhouette=0.3155, Davies-Bouldin=1.1577, Calinski-Harabasz=6957.2
