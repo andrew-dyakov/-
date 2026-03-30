@@ -1,9 +1,9 @@
 {
   "dataset": "SVHN",
-  "architecture": "SimpleCNN",
-  "transforms": "basic",
+  "architecture": "ResNet18",
+  "transforms": "resnet_imagenet",
   "seed": 67,
   "batch_size": 64,
-  "best_experiment": "C1",
-  "test_accuracy": 0.462
+  "best_experiment": "C4",
+  "test_accuracy": 0.642
 }

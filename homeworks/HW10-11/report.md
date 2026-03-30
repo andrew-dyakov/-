@@ -56,8 +56,8 @@
 
 ### Если выбран segmentation track
 
-- Модель:DeepLabV3_ResNet50
-- Что считается foreground: класс 0 - фон класс>0 - питомец
+- Модель: DeepLabV3_ResNet50
+- Что считается foreground: Класс 0 = фон, Класс > 0 = питомец (животное)
 - V1: базовая постобработка
 - V2: альтернативная постобработка
 - Как считался mean IoU: intersection / union по маскам pred > 0, gt > 0
@@ -73,7 +73,8 @@
 - Кривые лучшего прогона классификации: `./artifacts/figures/classification_curves_best.png`
 - Сравнение C1-C4: `./artifacts/figures/classification_compare.png`
 - Визуализация аугментаций: `./artifacts/figures/augmentations_preview.png`
-- Визуализации второй части: `./artifacts/figures/...`
+- Визуализации второй части: `./artifacts/figures/segmentation_examples.png` 
+- Визуализации метрик второй части: `./artifacts/figures/segmentation_metrics.png`
 
 Короткая сводка (6-10 строк):
 
